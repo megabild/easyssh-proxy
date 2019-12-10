@@ -314,6 +314,7 @@ func (ssh_conf *MakeConfig) Scp(sourceFile string, etargetFile string) error {
 			return
 		}
 		defer w.Close()
+		defer src.Close()
 
 		fmt.Fprintln(w, "C0644", srcStat.Size(), targetFile)
 
